@@ -1,9 +1,15 @@
-import { SignUp } from "@clerk/clerk-react"
+'use client'
 
-const SignUpPage =  () => {
-      return(
-            <SignUp afterSignInUrl="/new-user" redirectUrl="/new-user" />
+import { SignUp } from '@clerk/nextjs'
+
+export default function SignUpPage() {
+      return (
+            <SignUp
+                  path="/sign-up"
+                  routing="path"
+                  signInUrl="/sign-in"
+                  redirectUrl="/new-user"
+                  afterSignUpUrl="/new-user"
+            />
       )
 }
-
-export default SignUpPage
