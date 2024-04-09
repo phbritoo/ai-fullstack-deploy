@@ -17,6 +17,7 @@ const getEntries = async () => {
             }
       })
       // await analyze("create me a vue component that renders a counting number")
+      console.log("!!",entries)
       return entries
 }
 
@@ -30,11 +31,13 @@ const JournalPage = async () => {
                   </div>
                   <div className="grid grid-cols-3 gap-4">
                         <NewEntryCard />
-                        {entries.map((entry) => (
-                              <Link href={`/journal/${entry.id}`} key={entry.id}>
-                                    <EntryCard entry={entry} />
-                              </Link>
-                        ))}
+                        {entries.map((entry) => {
+                              console.log("ENTRY =", entry)
+                              return (
+                                    <Link href={`/journal/${entry.id}`} key={entry.id}>
+                                          <EntryCard entry={entry} />
+                                    </Link>)
+                        })}
                   </div>
             </div>
       )

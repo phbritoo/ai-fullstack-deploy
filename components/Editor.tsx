@@ -9,11 +9,12 @@ const Editor = ({ entry }) => {
       const [isLoading, setIdLoading] = useState(false)
       const [analysis, setAnalysis] = useState(entry.analysis || {})
 
-      const { mood, summary, color, subject, negative } = analysis
+      const { mood, summary, color, subject, negative, sentimentScore } = analysis
       const analysisData = [
             { name: 'Summary', value: summary },
             { name: 'Subject', value: subject },
             { name: 'Mood', value: mood },
+            { name: 'SentimentScore', value: sentimentScore },
             { name: 'Negative', value: negative ? 'True' : 'False' },
       ]
 

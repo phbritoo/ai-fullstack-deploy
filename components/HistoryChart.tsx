@@ -1,6 +1,5 @@
-'use  client'
-
-import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis } from "recharts"
+'use client'
+import { ResponsiveContainer, LineChart, Line, XAxis, Tooltip } from 'recharts'
 
 const CustomTooltip = ({ payload, label, active }) => {
       const dateLabel = new Date(label).toLocaleString('en-us', {
@@ -30,7 +29,7 @@ const CustomTooltip = ({ payload, label, active }) => {
 
 const HistoryCharts = ({ data }) => {
       return (
-            <ResponsiveContainer width={"100%"} height={"100%"}>
+            <ResponsiveContainer width={"90%"} height={"90%"}>
                   <LineChart width={300} height={100} data={data}>
                         <Line
                               dataKey={"sentimentScore"}
@@ -39,7 +38,7 @@ const HistoryCharts = ({ data }) => {
                               strokeWidth={2}
                               activeDot={{ r: 8 }}
                         />
-                        <XAxis dataKey={"createdAt"} />
+                        <XAxis dataKey={"updatedAt"} />
                         <Tooltip content={<CustomTooltip />} />
                   </LineChart>
             </ResponsiveContainer>
